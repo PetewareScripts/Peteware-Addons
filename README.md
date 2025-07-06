@@ -7,7 +7,7 @@ Adds useful Peteware commands to Infinite Yield:
 - ;peteware     - Loads the full Peteware V1 script
 
 ### No need to execute the script again after first use — the plugin saves automatically.
-Fully open-source and safe. View source here: **<https://pastebin.com/V1UWKntb>**
+Fully open-source and safe. View source here: **<https://github.com/PetewareScripts/Peteware-Addons/blob/main/IY_FE>**
 
 **Execute with one line:**
 ```lua
