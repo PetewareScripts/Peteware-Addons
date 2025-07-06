@@ -1,4 +1,4 @@
-## :jigsaw: Peteware Addons (Infinite Yield Plugin)
+## 🧩 Peteware Addons (Infinite Yield Plugin)
 
 Adds useful Peteware commands to Infinite Yield:
 
@@ -8,12 +8,12 @@ Adds useful Peteware commands to Infinite Yield:
 
 ### No need to execute the script again unless updated — the plugin saves automatically.
 ### Regulary Updated with new commands.
-Fully open-source and safe. View source here: **<https://github.com/PetewareScripts/Peteware-Addons/blob/main/IY_FE>**
+Fully open-source and safe. View source here: **<https://github.com/PetewareScripts/Peteware-Addons/tree/main>**
 
 
 **Execute with one line:**
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/PetewareScripts/Peteware-Addons/refs/heads/main/IY_FE"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PetewareScripts/Peteware-Addons/refs/heads/main/IY_FE.lua"))()
 ```
 
 Developed by **Peteware**
