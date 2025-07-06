@@ -11,7 +11,7 @@ Fully open-source and safe. View source here: **<https://github.com/PetewareScri
 
 **Execute with one line:**
 ```lua
-loadstring(game:HttpGet("https://pastebin.com/raw/V1UWKntb"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PetewareScripts/Peteware-Addons/refs/heads/main/IY_FE"))()
 ```
 
 Developed by **Peteware**
