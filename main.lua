@@ -30,7 +30,7 @@ local plugin = {
                     local res = req({Url = url, Method = "GET"})
                     if res and res.StatusCode == 200 then
                         loadstring(res.Body)()
-                        notify("Peteware Addons", "The Developer Toolbox is loading... Please wait", 3)
+                        notify("Peteware Addons", "Developer Toolbox Loaded", 3)
                     else
                         notify("Peteware Addons", "Failed to fetch Developer Toolbox. Status: " .. tostring(res and res.StatusCode or "unknown"), 3)
                     end
@@ -38,7 +38,7 @@ local plugin = {
                     local success, content = pcall(function() return game:HttpGet(url) end)
                     if success then
                         loadstring(content)()
-                        notify("Peteware Addons", "The Developer Toolbox is loading... Please wait", 3)
+                        notify("Peteware Addons", "Developer Toolbox Loaded", 3)
                     else
                         notify("Peteware Addons", "Failed to load Developer Toolbox: " .. tostring(content), 3)
                     end
