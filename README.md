@@ -1,13 +1,15 @@
-## 🧩 Peteware Addons (Infinite Yield Plugin)
+## :jigsaw: Peteware Addons (Infinite Yield Plugin)
 
 Adds useful Peteware commands to Infinite Yield:
 
-- ;serverlink   - Copies a rejoin link for your current server
+- ;serverlink   - Copies a join link for your current server
 - ;toolbox      - Loads the Peteware Developer Toolbox
 - ;peteware     - Loads the full Peteware V1 script
 
-### No need to execute the script again after first use — the plugin saves automatically.
+### No need to execute the script again after first use unless updated — the plugin saves automatically.
+### Regulary Updated with new commands.
 Fully open-source and safe. View source here: **<https://github.com/PetewareScripts/Peteware-Addons/blob/main/IY_FE>**
+
 
 **Execute with one line:**
 ```lua
