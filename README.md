@@ -5,6 +5,7 @@ Adds useful Peteware commands to Infinite Yield:
 - ;serverlink   - Copies a join link for your current server
 - ;toolbox      - Loads the Peteware Developer Toolbox
 - ;peteware     - Loads the full Peteware V1 script
+- ;hydroxide Loads Hydroxide script
 
 ### No need to execute the script again after first use — the plugin saves automatically.
 ### Regulary Updated with new commands.
