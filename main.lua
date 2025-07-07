@@ -2,8 +2,8 @@ local plugin = {
     ["PluginName"] = "Peteware Addons",
     ["PluginDescription"] = "A list of available extra commands for Infinite Yield FE",
     ["Commands"] = {
-        ["serverlink"] = {
-            ["ListName"] = "serverlink",
+        ["joinlink"] = {
+            ["ListName"] = "joinlink",
             ["Description"] = "Copies a join link for this specific server to clipboard.",
             ["Aliases"] = {},
             ["Function"] = function(args, speaker)
@@ -20,9 +20,9 @@ local plugin = {
             end
         },
         ["toolbox"] = {
-            ["ListName"] = "toolbox",
+            ["ListName"] = "toolbox / devtoolbox",
             ["Description"] = "Loads the Developer Toolbox.",
-            ["Aliases"] = {"devtoolbox", "developertoolbox"},
+            ["Aliases"] = {"devtoolbox"},
             ["Function"] = function(args, speaker)
                 local url = "https://raw.githubusercontent.com/PetewareScripts/Developers-Toolbox-Peteware/refs/heads/main/main.lua"
                 local req = (http and http.request) or (syn and syn.request) or http_request
@@ -32,7 +32,7 @@ local plugin = {
                         loadstring(res.Body)()
                         notify("Peteware Addons", "Developer Toolbox Loaded", 3)
                     else
-                        notify("Peteware Addons", "Failed to fetch Developer Toolbox. Status: " .. tostring(res and res.StatusCode or "unknown"), 3)
+                        notify("Peteware Addons", "Failed to fetch Developer Toolbox src. Status: " .. tostring(res and res.StatusCode or "unknown"), 3)
                     end
                 else
                     local success, content = pcall(function() return game:HttpGet(url) end)
@@ -40,15 +40,15 @@ local plugin = {
                         loadstring(content)()
                         notify("Peteware Addons", "Developer Toolbox Loaded", 3)
                     else
-                        notify("Peteware Addons", "Failed to load Developer Toolbox: " .. tostring(content), 3)
+                        notify("Peteware Addons", "Failed to load the Developer Toolbox: " .. tostring(content), 3)
                     end
                 end
             end
         },
         ["peteware"] = {
-            ["ListName"] = "peteware",
-            ["Description"] = "Loads the Peteware-V1.",
-            ["Aliases"] = {"petewarev1", "peteware-v1"},
+            ["ListName"] = "peteware / petewarev1",
+            ["Description"] = "Loads Peteware-V1.",
+            ["Aliases"] = {"petewarev1"},
             ["Function"] = function(args, speaker)
                 local url = "https://raw.githubusercontent.com/PetewareScripts/Peteware-V1/refs/heads/main/Loader"
                 local req = (http and http.request) or (syn and syn.request) or http_request
@@ -56,17 +56,43 @@ local plugin = {
                     local res = req({Url = url, Method = "GET"})
                     if res and res.StatusCode == 200 then
                         loadstring(res.Body)()
-                        notify("Peteware Addons", "Peteware-V1 is loading... Please wait", 3)
+                        notify("Peteware Addons", "Peteware-V1 Loaded", 3)
                     else
-                        notify("Peteware Addons", "Failed to fetch Peteware-V1. Status: " .. tostring(res and res.StatusCode or "unknown"), 3)
+                        notify("Peteware Addons", "Failed to fetch Peteware-V1 src. Status: " .. tostring(res and res.StatusCode or "unknown"), 3)
                     end
                 else
                     local success, content = pcall(function() return game:HttpGet(url) end)
                     if success then
                         loadstring(content)()
-                        notify("Peteware Addons", "Peteware-V1 is loading... Please wait", 3)
+                        notify("Peteware Addons", "Peteware-V1 Loaded", 3)
                     else
                         notify("Peteware Addons", "Failed to load Peteware-V1: " .. tostring(content), 3)
+                    end
+                end
+            end
+        },
+        ["hydroxide"] = {
+            ["ListName"] = "hydroxide",
+            ["Description"] = "Loads Hydroxide.",
+            ["Aliases"] = {},
+            ["Function"] = function(args, speaker)
+                local url = "https://dpaste.org/2PjmR/raw"
+                local req = (http and http.request) or (syn and syn.request) or http_request
+                if req then
+                    local res = req({Url = url, Method = "GET"})
+                    if res and res.StatusCode == 200 then
+                        loadstring(res.Body)()
+                        notify("Peteware Addons", "Hydroxide Loaded", 3)
+                    else
+                        notify("Peteware Addons", "Failed to fetch Hydroxide src. Status: " .. tostring(res and res.StatusCode or "unknown"), 3)
+                    end
+                else
+                    local success, content = pcall(function() return game:HttpGet(url) end)
+                    if success then
+                        loadstring(content)()
+                        notify("Peteware Addons", "Hydroxide Loaded", 3)
+                    else
+                        notify("Peteware Addons", "Failed to load Hydroxide: " .. tostring(content), 3)
                     end
                 end
             end
