@@ -24,13 +24,16 @@ local plugin = {
             ["Description"] = "Loads the Developer Toolbox.",
             ["Aliases"] = {"devtoolbox"},
             ["Function"] = function(args, speaker)
+                task.spawn(function()
+                    notify("Peteware Addons", "Hold on a sec")
+                end)
+                task.wait(1)
                 local url = "https://raw.githubusercontent.com/PetewareScripts/Developers-Toolbox-Peteware/refs/heads/main/main.lua"
                 local req = (http and http.request) or (syn and syn.request) or http_request
                 if req then
                     local res = req({Url = url, Method = "GET"})
                     if res and res.StatusCode == 200 then
                         loadstring(res.Body)()
-                        notify("Peteware Addons", "Developer Toolbox Loaded", 3)
                     else
                         notify("Peteware Addons", "Failed to fetch Developer Toolbox src. Status: " .. tostring(res and res.StatusCode or "unknown"), 3)
                     end
@@ -38,7 +41,6 @@ local plugin = {
                     local success, content = pcall(function() return game:HttpGet(url) end)
                     if success then
                         loadstring(content)()
-                        notify("Peteware Addons", "Developer Toolbox Loaded", 3)
                     else
                         notify("Peteware Addons", "Failed to load the Developer Toolbox: " .. tostring(content), 3)
                     end
@@ -50,13 +52,16 @@ local plugin = {
             ["Description"] = "Loads Peteware-V1.",
             ["Aliases"] = {"petewarev1"},
             ["Function"] = function(args, speaker)
+                task.spawn(function()
+                    notify("Peteware Addons", "Hold on a sec")
+                end)
+                task.wait(1)
                 local url = "https://raw.githubusercontent.com/PetewareScripts/Peteware-V1/refs/heads/main/Loader"
                 local req = (http and http.request) or (syn and syn.request) or http_request
                 if req then
                     local res = req({Url = url, Method = "GET"})
                     if res and res.StatusCode == 200 then
                         loadstring(res.Body)()
-                        notify("Peteware Addons", "Peteware-V1 Loaded", 3)
                     else
                         notify("Peteware Addons", "Failed to fetch Peteware-V1 src. Status: " .. tostring(res and res.StatusCode or "unknown"), 3)
                     end
@@ -64,7 +69,6 @@ local plugin = {
                     local success, content = pcall(function() return game:HttpGet(url) end)
                     if success then
                         loadstring(content)()
-                        notify("Peteware Addons", "Peteware-V1 Loaded", 3)
                     else
                         notify("Peteware Addons", "Failed to load Peteware-V1: " .. tostring(content), 3)
                     end
@@ -76,13 +80,16 @@ local plugin = {
             ["Description"] = "Loads Hydroxide.",
             ["Aliases"] = {},
             ["Function"] = function(args, speaker)
+                task.spawn(function()
+                    notify("Peteware Addons", "Hold on a sec")
+                end)
+                task.wait(1)
                 local url = "https://raw.githubusercontent.com/PetewareScripts/Peteware-Addons/refs/heads/main/Commands/hydroxide"
                 local req = (http and http.request) or (syn and syn.request) or http_request
                 if req then
                     local res = req({Url = url, Method = "GET"})
                     if res and res.StatusCode == 200 then
                         loadstring(res.Body)()
-                        notify("Peteware Addons", "Hydroxide Loaded", 3)
                     else
                         notify("Peteware Addons", "Failed to fetch Hydroxide src. Status: " .. tostring(res and res.StatusCode or "unknown"), 3)
                     end
@@ -90,7 +97,6 @@ local plugin = {
                     local success, content = pcall(function() return game:HttpGet(url) end)
                     if success then
                         loadstring(content)()
-                        notify("Peteware Addons", "Hydroxide Loaded", 3)
                     else
                         notify("Peteware Addons", "Failed to load Hydroxide: " .. tostring(content), 3)
                     end
