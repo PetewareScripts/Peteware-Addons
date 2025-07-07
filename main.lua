@@ -76,7 +76,7 @@ local plugin = {
             ["Description"] = "Loads Hydroxide.",
             ["Aliases"] = {},
             ["Function"] = function(args, speaker)
-                local url = "https://dpaste.org/2PjmR/raw"
+                local url = "https://raw.githubusercontent.com/PetewareScripts/Peteware-Addons/refs/heads/main/Commands/hydroxide"
                 local req = (http and http.request) or (syn and syn.request) or http_request
                 if req then
                     local res = req({Url = url, Method = "GET"})
