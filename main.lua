@@ -47,34 +47,6 @@ local plugin = {
                 end
             end
         },
-        ["peteware"] = {
-            ["ListName"] = "peteware / petewarev1",
-            ["Description"] = "Loads Peteware-V1.",
-            ["Aliases"] = {"petewarev1"},
-            ["Function"] = function(args, speaker)
-                task.spawn(function()
-                    notify("Peteware Addons", "Hold on a sec")
-                end)
-                task.wait(1)
-                local url = "https://raw.githubusercontent.com/PetewareScripts/Peteware-V1/refs/heads/main/Loader"
-                local req = (http and http.request) or (syn and syn.request) or http_request
-                if req then
-                    local res = req({Url = url, Method = "GET"})
-                    if res and res.StatusCode == 200 then
-                        loadstring(res.Body)()
-                    else
-                        notify("Peteware Addons", "Failed to fetch Peteware-V1 src. Status: " .. tostring(res and res.StatusCode or "unknown"), 3)
-                    end
-                else
-                    local success, content = pcall(function() return game:HttpGet(url) end)
-                    if success then
-                        loadstring(content)()
-                    else
-                        notify("Peteware Addons", "Failed to load Peteware-V1: " .. tostring(content), 3)
-                    end
-                end
-            end
-        },
         ["hydroxide"] = {
             ["ListName"] = "hydroxide",
             ["Description"] = "Loads Hydroxide.",
